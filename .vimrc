@@ -58,6 +58,9 @@ filetype plugin indent on    " required
 execute pathogen#infect()
 
 " set spell spelllang=en_us
+:hi clear SpellBad
+:hi SpellBad cterm=underline,bold ctermfg=red
+
 :set nofixendofline
 
 "==================================================================================================
