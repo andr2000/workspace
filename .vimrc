@@ -186,8 +186,8 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Popup menu hightLight Group
-highlight Pmenu ctermbg=13 guibg=LightGray
-highlight PmenuSel ctermbg=7 guibg=DarkBlue guifg=White
+highlight Pmenu ctermbg=7 guibg=LightGray
+highlight PmenuSel ctermbg=14 guibg=DarkBlue guifg=White
 highlight PmenuSbar ctermbg=7 guibg=DarkGray
 highlight PmenuThumb guibg=Black
 
