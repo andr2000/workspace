@@ -206,3 +206,8 @@ let OmniCpp_MayCompleteScope = 0
 " don't select first item in pop-up menu
 let OmniCpp_SelectFirstItem = 0
 
+"==================================================================================================
+" git commit
+"==================================================================================================
+autocmd FileType gitcommit setlocal spell
+
