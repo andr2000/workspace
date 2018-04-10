@@ -165,12 +165,6 @@ map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>
 
 set complete-=i
 
-" http://vim.wikia.com/wiki/Show_tags_in_a_separate_preview_window
-" This will make Control-] pop open a window and show the tag there.
-" The :ptjump command shows the tag in a preview window without changing
-" the current buffer or your cursor position.
-nnoremap <C-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
-
 " Enable OmniCompletion
 " http://vim.wikia.com/wiki/Omni_completion
 filetype plugin on
@@ -205,6 +199,19 @@ let OmniCpp_MayCompleteArrow = 1
 let OmniCpp_MayCompleteScope = 0
 " don't select first item in pop-up menu
 let OmniCpp_SelectFirstItem = 0
+
+"==================================================================================================
+" ctags
+"==================================================================================================
+
+" http://vim.wikia.com/wiki/Show_tags_in_a_separate_preview_window
+" This will make Control-] pop open a window and show the tag there.
+" The :ptjump command shows the tag in a preview window without changing
+" the current buffer or your cursor position.
+" nnoremap <C-]> <Esc>:exe "ptjump " . expand("<cword>")<Esc>
+
+" open window split vertically to the right, then navigate with Ctrl-] as usually
+map <leader>] :rightb vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "==================================================================================================
 " git commit
