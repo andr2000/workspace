@@ -48,6 +48,8 @@ Plugin 'changyuheng/color-scheme-holokai-for-vim'
 
 Plugin 'kergoth/vim-bitbake'
 
+Plugin 'vim-airline/vim-airline'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -80,20 +82,6 @@ filetype plugin indent on    " required
 
 set ignorecase " ignore case when searching
 set smartcase  " ... except when search pattern contains an uppercase char
-
-"==================================================================================================
-" Show status line
-"==================================================================================================
-if has("statusline") && !&cp
-  set laststatus=2  " always show the status bar
-
-  set statusline=%f\ %m\ %r
-  set statusline+=Buf:#%n
-  set statusline+=\ 
-  set statusline+=Line:%l/%L[%p%%]
-  set statusline+=\ 
-  set statusline+=Col:%v
-endif
 
 "==================================================================================================
 " Show tabs
