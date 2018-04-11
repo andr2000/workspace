@@ -44,6 +44,8 @@ Plugin 'kergoth/vim-bitbake'
 
 Plugin 'vim-airline/vim-airline'
 
+Plugin 'milkypostman/vim-togglelist'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -248,3 +250,14 @@ au FileType gitcommit
 au FileType text
   \ set spell |
   \ set background=dark
+
+"==================================================================================================
+" QuickfixEdit
+"==================================================================================================
+let g:toggle_list_no_mappings = 1
+" mappings to jump between locations in a quickfix list, or
+" differences if in window in diff mode
+nnoremap <expr> <silent> <F7>   (&diff ? "]c" : ":cnext\<CR>")
+nnoremap <expr> <silent> <F8> (&diff ? "[c" : ":cprev\<CR>")
+
+nmap <script> <silent> <F6> :call ToggleQuickfixList()<CR>
