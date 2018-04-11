@@ -44,6 +44,8 @@ Plugin 'vivien/vim-linux-coding-style'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'changyuheng/color-scheme-holokai-for-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -70,6 +72,8 @@ filetype plugin indent on    " required
 :set nofixendofline
 
 :set number
+
+:colorscheme holokai
 
 "==================================================================================================
 " Show status line
