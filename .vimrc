@@ -252,3 +252,6 @@ autocmd FileType gitcommit setlocal spell
 
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
+
+au FileType gitcommit
+ \ set background=dark
