@@ -68,6 +68,20 @@ execute pathogen#infect()
 :set number
 
 "==================================================================================================
+" Show status line
+"==================================================================================================
+if has("statusline") && !&cp
+  set laststatus=2  " always show the status bar
+
+  set statusline=%f\ %m\ %r
+  set statusline+=Buf:#%n
+  set statusline+=\ 
+  set statusline+=Line:%l/%L[%p%%]
+  set statusline+=\ 
+  set statusline+=Col:%v
+endif
+
+"==================================================================================================
 " Show tabs
 "==================================================================================================
 :set listchars=tab:>-,trail:~,extends:>,precedes:<
