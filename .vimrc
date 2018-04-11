@@ -75,6 +75,9 @@ filetype plugin indent on    " required
 
 :colorscheme holokai
 
+set ignorecase " ignore case when searching
+set smartcase  " ... except when search pattern contains an uppercase char
+
 "==================================================================================================
 " Show status line
 "==================================================================================================
