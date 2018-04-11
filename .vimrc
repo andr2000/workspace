@@ -232,7 +232,9 @@ let OmniCpp_SelectFirstItem = 0
 map <leader>] :rightb vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 "==================================================================================================
-" git commit
+" git
 "==================================================================================================
 autocmd FileType gitcommit setlocal spell
 
+" find merge conflict markers
+nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
