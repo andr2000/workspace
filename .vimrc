@@ -38,8 +38,6 @@ Plugin 'vim-scripts/OmniCppComplete'
 
 Plugin 'ntpeters/vim-better-whitespace'
 
-Plugin 'zefei/vim-wintabs'
-
 Plugin 'vivien/vim-linux-coding-style'
 
 Plugin 'scrooloose/nerdtree'
@@ -79,6 +77,10 @@ filetype plugin indent on    " required
 
 :colorscheme holokai
 :set background=light
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 
 set ignorecase " ignore case when searching
 set smartcase  " ... except when search pattern contains an uppercase char
