@@ -1,3 +1,3 @@
-#. git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-#. :PluginInstall
-#. :PluginUpdate
+* git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+* :PluginInstall
+* :PluginUpdate
