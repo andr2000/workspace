@@ -42,6 +42,8 @@ Plugin 'zefei/vim-wintabs'
 
 Plugin 'vivien/vim-linux-coding-style'
 
+Plugin 'scrooloose/nerdtree'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -60,8 +62,6 @@ filetype plugin indent on    " required
 "==================================================================================================
 " All the rest
 "==================================================================================================
-
-execute pathogen#infect()
 
 " set spell spelllang=en_us
 :hi clear SpellBad
