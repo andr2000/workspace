@@ -86,10 +86,9 @@ set smartcase  " ... except when search pattern contains an uppercase char
 "==================================================================================================
 " Show tabs and spaces
 "==================================================================================================
-:set listchars=tab:>-,trail:~,extends:>,precedes:<
+:set listchars=tab:>-,trail:~,extends:>,precedes:<,space:·
 :hi SpecialKey ctermfg=237 guifg=grey70
 :set list
-:set lcs+=space:·
 
 "==================================================================================================
 " Restore cursor position
