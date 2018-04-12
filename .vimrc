@@ -87,7 +87,7 @@ set smartcase  " ... except when search pattern contains an uppercase char
 " Show tabs and spaces
 "==================================================================================================
 :set listchars=tab:>-,trail:~,extends:>,precedes:<
-:hi SpecialKey ctermfg=grey guifg=grey70
+:hi SpecialKey ctermfg=237 guifg=grey70
 :set list
 :set lcs+=space:·
 
