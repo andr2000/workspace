@@ -123,6 +123,8 @@ let g:NERDTreeWinSize = 35
 au BufLeave * if !&diff | let b:winview = winsaveview() | endif
 au BufEnter * if exists('b:winview') && !&diff | call winrestview(b:winview) | unlet! b:winview | endif
 
+" Find the file in the project drawer
+nmap <script> <silent> <F3> :NERDTreeFind<CR>
 
 " Switch between NERDTree and opened file
 :nmap \e :wincmd w<CR>
