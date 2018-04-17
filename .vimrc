@@ -70,6 +70,9 @@ filetype plugin indent on    " required
 " All the rest
 "==================================================================================================
 
+" Allow mouse
+:set mouse=a
+
 " set spell spelllang=en_us
 :hi clear SpellBad
 :hi SpellBad cterm=underline,bold ctermfg=red
