@@ -73,6 +73,9 @@ filetype plugin indent on    " required
 " Allow mouse
 :set mouse=a
 
+" Bind contents of the visual selection to system primary buffer
+set clipboard^=autoselect
+
 " set spell spelllang=en_us
 :hi clear SpellBad
 :hi SpellBad cterm=underline,bold ctermfg=red
