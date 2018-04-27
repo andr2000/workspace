@@ -104,7 +104,7 @@ set smartcase  " ... except when search pattern contains an uppercase char
 "==================================================================================================
 " Restore cursor position
 "==================================================================================================
-au BufReadPost *
+autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") && &filetype != "gitcommit" |
     \ execute("normal `\"") |
   \ endif
@@ -117,7 +117,7 @@ au BufReadPost *
 if exists('+colorcolumn')
   set colorcolumn=81
 else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>81v.\+', -1)
+  autocmd BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>81v.\+', -1)
 endif
 
 "==================================================================================================
@@ -126,8 +126,8 @@ endif
 let g:NERDTreeWinSize = 35
 
 " Preserve scroll position when switching between buffers
-au BufLeave * if !&diff | let b:winview = winsaveview() | endif
-au BufEnter * if exists('b:winview') && !&diff | call winrestview(b:winview) | unlet! b:winview | endif
+autocmd BufLeave * if !&diff | let b:winview = winsaveview() | endif
+autocmd BufEnter * if exists('b:winview') && !&diff | call winrestview(b:winview) | unlet! b:winview | endif
 
 " Find the file in the project drawer
 nmap <script> <silent> <F3> :NERDTreeFind<CR>
@@ -172,7 +172,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
   
 " Focus on opened view after starting (instead of NERDTree)
 autocmd VimEnter * call s:syncTree()
-au VimEnter * :wincmd w
+autocmd VimEnter * :wincmd w
 
 " Auto refresh NERDTree files
 autocmd CursorHold,CursorHoldI * if (winnr("$") > 1) | call NERDTreeFocus() | call g:NERDTree.ForCurrentTab().getRoot().refresh() | call g:NERDTree.ForCurrentTab().render() | wincmd w | endif
@@ -254,13 +254,13 @@ autocmd FileType gitcommit setlocal spell
 " find merge conflict markers
 nmap <silent> <leader>fc <ESC>/\v^[<=>]{7}( .*\|$)<CR>
 
-au FileType gitcommit
+autocmd FileType gitcommit
  \ set background=dark
 
 "==================================================================================================
 " Text files
 "==================================================================================================
-au FileType text
+autocmd FileType text
   \ set spell |
   \ set background=dark
 
