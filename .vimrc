@@ -170,10 +170,6 @@ endfunction
 " Automatically close vim if only NERDTree left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   
-" Focus on opened view after starting (instead of NERDTree)
-autocmd VimEnter * call s:syncTree()
-autocmd VimEnter * :wincmd w
-
 " Auto refresh NERDTree files
 autocmd CursorHold,CursorHoldI * if (winnr("$") > 1) | call NERDTreeFocus() | call g:NERDTree.ForCurrentTab().getRoot().refresh() | call g:NERDTree.ForCurrentTab().render() | wincmd w | endif
 
@@ -274,3 +270,38 @@ nnoremap <expr> <silent> <F7>   (&diff ? "]c" : ":cnext\<CR>")
 nnoremap <expr> <silent> <F8> (&diff ? "[c" : ":cprev\<CR>")
 
 nmap <script> <silent> <F6> :call ToggleQuickfixList()<CR>
+
+"==================================================================================================
+" Session handling
+"==================================================================================================
+fu! SaveSess()
+    execute 'mksession! ' . getcwd() . '/.session.vim'
+endfunction
+
+fu! RestoreSess()
+if filereadable(getcwd() . '/.session.vim')
+    execute 'so ' . getcwd() . '/.session.vim'
+    if bufexists(1)
+        for l in range(1, bufnr('$'))
+            if bufwinnr(l) == -1
+                exec 'sbuffer ' . l
+            endif
+        endfor
+    endif
+endif
+endfunction
+
+"==================================================================================================
+" VimEnter/VimLeave
+"==================================================================================================
+autocmd VimEnter *
+	\ nested call RestoreSess() |
+	\ NERDTree |
+	\ :wincmd w |
+	\ call s:syncTree() |
+	\ :winc =
+
+autocmd VimLeave *
+	\ NERDTreeClose |
+	\ call SaveSess()
+
