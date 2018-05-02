@@ -303,5 +303,7 @@ autocmd VimEnter *
 
 autocmd VimLeave *
 	\ NERDTreeClose |
-	\ call SaveSess()
+	\ if exists("g:autosave_session_on_exit") |
+	\ 	call SaveSess() |
+	\ endif
 
