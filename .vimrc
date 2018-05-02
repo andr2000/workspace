@@ -279,14 +279,16 @@ fu! SaveSess()
 endfunction
 
 fu! RestoreSess()
-if filereadable(getcwd() . '/.session.vim')
-    execute 'so ' . getcwd() . '/.session.vim'
-    if bufexists(1)
-        for l in range(1, bufnr('$'))
-            if bufwinnr(l) == -1
-                exec 'sbuffer ' . l
-            endif
-        endfor
+if !exists("g:no_autorestore_session_on_enter")
+    if filereadable(getcwd() . '/.session.vim')
+        execute 'so ' . getcwd() . '/.session.vim'
+        if bufexists(1)
+            for l in range(1, bufnr('$'))
+                if bufwinnr(l) == -1
+                    exec 'sbuffer ' . l
+                endif
+            endfor
+        endif
     endif
 endif
 endfunction
@@ -294,6 +296,9 @@ endfunction
 "==================================================================================================
 " VimEnter/VimLeave
 "==================================================================================================
+autocmd FileType gitcommit
+	\ let g:no_autorestore_session_on_enter=1
+
 autocmd VimEnter *
 	\ nested call RestoreSess() |
 	\ NERDTree |
