@@ -51,6 +51,9 @@ Plugin 'milkypostman/vim-togglelist'
 
 Plugin 'thinca/vim-localrc'
 
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -274,41 +277,16 @@ nmap <script> <silent> <F6> :call ToggleQuickfixList()<CR>
 "==================================================================================================
 " Session handling
 "==================================================================================================
-fu! SaveSess()
-    execute 'mksession! ' . getcwd() . '/.session.vim'
-endfunction
-
-fu! RestoreSess()
-if !exists("g:no_autorestore_session_on_enter")
-    if filereadable(getcwd() . '/.session.vim')
-        execute 'so ' . getcwd() . '/.session.vim'
-        if bufexists(1)
-            for l in range(1, bufnr('$'))
-                if bufwinnr(l) == -1
-                    exec 'sbuffer ' . l
-                endif
-            endfor
-        endif
-    endif
-endif
-endfunction
+let g:session_autosave = 'no'
 
 "==================================================================================================
 " VimEnter/VimLeave
 "==================================================================================================
-autocmd FileType gitcommit
-	\ let g:no_autorestore_session_on_enter=1
-
 autocmd VimEnter *
-	\ nested call RestoreSess() |
 	\ NERDTree |
 	\ :wincmd w |
 	\ call s:syncTree() |
 	\ :winc =
 
 autocmd VimLeave *
-	\ NERDTreeClose |
-	\ if exists("g:autosave_session_on_exit") |
-	\ 	call SaveSess() |
-	\ endif
-
+	\ NERDTreeClose
