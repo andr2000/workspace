@@ -278,6 +278,7 @@ nmap <script> <silent> <F6> :call ToggleQuickfixList()<CR>
 " Session handling
 "==================================================================================================
 let g:session_autosave = 'no'
+let g:session_command_aliases = 1
 
 "==================================================================================================
 " VimEnter/VimLeave
