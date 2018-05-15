@@ -143,9 +143,6 @@ let g:NERDTreeWinSize = 35
 autocmd BufLeave * if !&diff | let b:winview = winsaveview() | endif
 autocmd BufEnter * if exists('b:winview') && !&diff | call winrestview(b:winview) | unlet! b:winview | endif
 
-" Find the file in the project drawer
-nmap <script> <silent> <F3> :NERDTreeFind<CR>
-
 " Switch between NERDTree and opened file
 :nmap \e :wincmd w<CR>
 
@@ -176,16 +173,16 @@ function! s:syncTreeIf()
     call s:syncTree()
   endif
 endfunction
-  
-" Shows NERDTree on start and synchronizes the tree with opened file when switching between opened windows
-" autocmd BufEnter * call s:syncTreeIf()
-  
+
+" Find the file in the project drawer
+map <silent> <F3> :call <SID>syncTreeIf()<CR>
   
 " Automatically close vim if only NERDTree left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   
-" Auto refresh NERDTree files
-autocmd CursorHold,CursorHoldI * if (winnr("$") > 1) | call NERDTreeFocus() | call g:NERDTree.ForCurrentTab().getRoot().refresh() | call g:NERDTree.ForCurrentTab().render() | wincmd w | endif
+" Synchronizes the tree with opened file when switching between opened windows
+" after the default timeout of 4sec (http://vimdoc.sourceforge.net/htmldoc/options.html#'updatetime')
+autocmd CursorHold,CursorHoldI * call s:syncTreeIf()
 
 " Show/Hide NERDTree
 :nmap <expr> \a (winnr("$") == 1) ? ':NERDTreeFind<CR>' : ':wincmd o<CR>'
