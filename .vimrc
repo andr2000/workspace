@@ -79,6 +79,10 @@ filetype plugin indent on    " required
 " Bind contents of the visual selection to system primary buffer
 set clipboard^=autoselect
 
+" Set options and add mapping such that Vim behaves a lot like MS-Windows
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
 " set spell spelllang=en_us
 :hi clear SpellBad
 :hi SpellBad cterm=underline,bold ctermfg=red
