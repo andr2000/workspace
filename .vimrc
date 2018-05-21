@@ -77,7 +77,7 @@ filetype plugin indent on    " required
 :set mouse=a
 
 " Bind contents of the visual selection to system primary buffer
-set clipboard^=autoselect
+set clipboard=unnamedplus
 
 " Set options and add mapping such that Vim behaves a lot like MS-Windows
 source $VIMRUNTIME/mswin.vim
