@@ -1,0 +1,32 @@
+[user]
+	email = oleksandr_andrushchenko@epam.com
+	name = Oleksandr Andrushchenko
+[core]
+	editor = vim
+	abbrev = 12
+
+[push]
+	default = simple
+
+
+[pretty]
+	fixes = Fixes: %h (\"%s\")
+
+[sendemail] 
+    smtpserver = smtp.gmail.com
+    smtpuser = andr2000@gmail.com
+    from = "Oleksandr Andrushchenko <andr2000@gmail.com>"
+    smtpserverport = 587
+    smtpencryption = tls
+    chainreplyto = false
+    suppresscc = self
+    thread = true
+[diff]
+	tool = meld
+[color]
+	ui = auto
+
+[alias]
+	find-tip = log -1 --format=%H --grep=\"^drm-tip: .* integration manifest$\"
+	retip = "!git rebase --onto drm_tip/drm-tip `git find-tip`"
+
