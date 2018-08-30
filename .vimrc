@@ -54,6 +54,8 @@ Plugin 'thinca/vim-localrc'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 
+Plugin 'andr2000/google.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
