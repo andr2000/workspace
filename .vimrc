@@ -103,12 +103,13 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 set ignorecase " ignore case when searching
 set smartcase  " ... except when search pattern contains an uppercase char
 
-" Enable Linux Kernel coding style for the following folders:
-let g:linuxsty_patterns = [ "/linux/", "/kernel/" ]
 
 set autoindent
 set smartindent
 set cino+=(0
+
+" Enable Linux Kernel coding style for the following folders:
+let g:linuxsty_patterns = [ "/*linux*/", "/*kernel*/" ]
 
 "==================================================================================================
 " Show tabs and spaces
