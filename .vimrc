@@ -346,4 +346,5 @@ autocmd VimEnter *
 	\ :winc =
 
 autocmd VimLeave *
-	\ NERDTreeClose
+	\ NERDTreeClose |
+	\ call system("xclip -o | xclip -selection c")
