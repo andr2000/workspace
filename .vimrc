@@ -37,7 +37,10 @@ Plugin 'vim-scripts/OmniCppComplete'
 
 Plugin 'ntpeters/vim-better-whitespace'
 
+" Coding style: Linux kernel
 Plugin 'vivien/vim-linux-coding-style'
+" Coding style: auto-detect
+Plugin 'tpope/vim-sleuth'
 
 Plugin 'scrooloose/nerdtree'
 
@@ -185,7 +188,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
   
 " Synchronizes the tree with opened file when switching between opened windows
 " after the default timeout of 4sec (http://vimdoc.sourceforge.net/htmldoc/options.html#'updatetime')
-autocmd CursorHold,CursorHoldI * call s:syncTreeIf()
+" autocmd CursorHold,CursorHoldI * call s:syncTreeIf()
 
 " Show/Hide NERDTree
 :nmap <expr> \a (winnr("$") == 1) ? ':NERDTreeFind<CR>' : ':wincmd o<CR>'
