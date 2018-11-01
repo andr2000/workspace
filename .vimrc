@@ -114,6 +114,10 @@ set cino+=(0
 " Enable Linux Kernel coding style for the following folders:
 let g:linuxsty_patterns = [ "/*linux*/", "/*kernel*/" ]
 
+" Indent with Tab and Shift-Tab
+:vmap <Tab> >
+:vmap <S-Tab> <
+
 "==================================================================================================
 " Show tabs and spaces
 "==================================================================================================
