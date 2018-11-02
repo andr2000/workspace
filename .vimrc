@@ -295,8 +295,10 @@ nmap <script> <silent> <F6> :call ToggleQuickfixList()<CR>
 "==================================================================================================
 " Session handling
 "==================================================================================================
-let g:session_autosave = 'no'
 let g:session_command_aliases = 1
+let g:session_autosave = 'yes'
+let g:session_autosave_to = 'default'
+let g:session_autoload = 'no'
 
 "==================================================================================================
 " Open same file read-only in second Vim
