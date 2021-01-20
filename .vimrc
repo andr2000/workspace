@@ -119,6 +119,10 @@ let g:linuxsty_patterns = [ "/*linux*/", "/*kernel*/" ]
 :vmap <Tab> >
 :vmap <S-Tab> <
 
+" To have undo history while switching between buffers
+:set hidden
+
+
 "==================================================================================================
 " Show tabs and spaces
 "==================================================================================================
