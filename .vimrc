@@ -49,6 +49,7 @@ Plugin 'changyuheng/color-scheme-holokai-for-vim'
 Plugin 'kergoth/vim-bitbake'
 
 Plugin 'vim-airline/vim-airline'
+Plugin 'preservim/tagbar'
 
 Plugin 'milkypostman/vim-togglelist'
 
@@ -293,6 +294,11 @@ nnoremap <expr> <silent> <F8> (&diff ? "[c" : ":cprev\<CR>")
 nmap <script> <silent> <F6> :call ToggleQuickfixList()<CR>
 
 "==================================================================================================
+" TagBar
+"==================================================================================================
+nmap <F9> :TagbarToggle<CR>
+
+"==================================================================================================
 " Session handling
 "==================================================================================================
 let g:session_command_aliases = 1
@@ -352,7 +358,8 @@ autocmd VimEnter *
 	\ NERDTree |
 	\ :wincmd w |
 	\ call s:syncTree() |
-	\ :winc =
+	\ :winc = |
+	\ :TagbarOpen
 
 autocmd VimLeave *
 	\ NERDTreeClose |
