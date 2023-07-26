@@ -144,7 +144,7 @@ autocmd BufReadPost *
 " 80 char lines
 "==================================================================================================
 
-:highlight ColorColumn ctermbg=7
+:highlight ColorColumn ctermbg=8
 if exists('+colorcolumn')
   set colorcolumn=81
 else
